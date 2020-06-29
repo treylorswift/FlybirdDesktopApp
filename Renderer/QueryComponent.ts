@@ -377,9 +377,12 @@ export class QueryComponent extends DOMComponent
 
     GetDefaultMessage():string
     {
-        return `Hey there, are you interested in receiving my newsletter?
+        let msg =
+`Hey there, are you interested in receiving my newsletter? You can sign up here:
 
-You can sign up at https://flybirdy.herokuapp.com/${this.parent.userLogin.screen_name}?twRef=\${followerTwitterHandle}`;
+https://flybirdy.herokuapp.com/subscribe/${this.parent.userLogin.screen_name}?twRef=\${followerTwitterHandle}`;
+
+        return msg;
     }
 
     async Render(em:HTMLElement)
