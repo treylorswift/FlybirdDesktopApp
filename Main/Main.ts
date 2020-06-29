@@ -13,8 +13,9 @@ let g_appAuth:TwitterAuth.AppAuth = null;
 let g_userLogin:TwitterAuth.UserLogin = null;
 let g_twitterUser:TwitterUser = null;
 
-let g_appAuthFileName = './app_auth.json';
-let g_userLoginFileName = './user_auth.json';
+let g_appAuthFileName = 'app_auth.json';
+let g_userLoginFileName = 'user_auth.json';
+export let g_dbFileName = 'TwitterFollowerDB.db';
 
 async function ValidateAppAndUserAuth():Promise<boolean>
 {
@@ -365,6 +366,18 @@ async function main()
     
     //before we start, check to see if we have valid app auth and user auth keys already.
     //if so, we won't need to ask the user for them
+    let userFolder = '.'
+    if (process.platform==='darwin')
+    {
+        //must put things in a special folder
+        userFolder = electronApp.getPath('userData');
+    }
+
+    g_appAuthFileName   = `${userFolder}/${g_appAuthFileName}`;
+    g_userLoginFileName = `${userFolder}/${g_userLoginFileName}`;
+    g_dbFileName        = `${userFolder}/${g_dbFileName}`;
+
+    console.log('User Folder: ' + userFolder);
 
     await ValidateAppAndUserAuth();
    

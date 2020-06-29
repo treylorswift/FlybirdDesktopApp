@@ -13,8 +13,9 @@ const RPC = require("../Shared/RPC");
 let g_appAuth = null;
 let g_userLogin = null;
 let g_twitterUser = null;
-let g_appAuthFileName = './app_auth.json';
-let g_userLoginFileName = './user_auth.json';
+let g_appAuthFileName = 'app_auth.json';
+let g_userLoginFileName = 'user_auth.json';
+exports.g_dbFileName = 'TwitterFollowerDB.db';
 async function ValidateAppAndUserAuth() {
     let app_auth = TwitterAuth.TryLoadAppAuth(g_appAuthFileName);
     if (!app_auth)
@@ -273,6 +274,15 @@ async function main() {
     //fs.unlinkSync(getAppPath);
     //before we start, check to see if we have valid app auth and user auth keys already.
     //if so, we won't need to ask the user for them
+    let userFolder = '.';
+    if (process.platform === 'darwin') {
+        //must put things in a special folder
+        userFolder = electron_1.app.getPath('userData');
+    }
+    g_appAuthFileName = `${userFolder}/${g_appAuthFileName}`;
+    g_userLoginFileName = `${userFolder}/${g_userLoginFileName}`;
+    exports.g_dbFileName = `${userFolder}/${exports.g_dbFileName}`;
+    console.log('User Folder: ' + userFolder);
     await ValidateAppAndUserAuth();
     electron_1.app.whenReady().then(() => {
         createWindow();

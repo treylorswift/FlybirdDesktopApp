@@ -9,6 +9,7 @@ import {DelaySeconds} from './Delay'
 import {TwitterFollower} from './TwitterUser';
 import {MessageEvent, MessagingCampaign} from './MessagingCampaign'
 import {FollowerCacheQuery,FollowerCacheQueryResult,FollowerCacheStatusEnum} from '../Shared/ServerApi'
+import {g_dbFileName} from './Main';
 
 
 //the db architecture is as follows
@@ -36,7 +37,7 @@ export class TwitterDB
 
     Init():boolean
     {
-        this.db = new DB('TwitterFollowerDB.db');//, { verbose: console.log });
+        this.db = new DB(g_dbFileName);//, { verbose: console.log });
 
         //configure for WAL mode which gets a performance boost
         this.db.pragma('journal_mode = WAL');

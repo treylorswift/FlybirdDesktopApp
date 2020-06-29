@@ -3,6 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const DB = require("better-sqlite3");
 const Delay_1 = require("./Delay");
 const ServerApi_1 = require("../Shared/ServerApi");
+const Main_1 = require("./Main");
 //the db architecture is as follows
 //
 //followers table - id_str, screen name, follower count (indexed column), bio/description, etc
@@ -25,7 +26,7 @@ class TwitterDB {
     }
     GetDB() { return this.db; }
     Init() {
-        this.db = new DB('TwitterFollowerDB.db'); //, { verbose: console.log });
+        this.db = new DB(Main_1.g_dbFileName); //, { verbose: console.log });
         //configure for WAL mode which gets a performance boost
         this.db.pragma('journal_mode = WAL');
         try {
