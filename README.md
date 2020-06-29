@@ -1,6 +1,6 @@
 # Flybird Desktop App
 
-Flybird Desktop App automates sending of direct messages to your Twitter followers, with a focus on soliciting mailing list / newsletter signups. Send up to 1000 messages per day.
+Flybird Desktop App automates sending of direct messages to your Twitter followers, with a focus on soliciting newsletter subscriptions. Send up to 1000 messages per day.
 
 ### Features
 
