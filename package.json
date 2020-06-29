@@ -1,0 +1,46 @@
+{
+  "name": "InfluencerToolkit",
+  "version": "1.0.1",
+  "description": "Influencer Toolkit Desktop App",
+  "main": "tsBuild/Main/Main.js",
+  "scripts": {
+    "start": "electron tsBuild/Main/Main.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "https://github.com/treylorswift/InfluencerToolkitApp",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "",
+  "devDependencies": {
+    "electron": "^9.0.4",
+    "electron-builder": "^22.7.0",
+    "electron-rebuild": "^1.11.0"
+  },
+  "build": {
+    "appId": "HDM.InfluencerToolkit",
+    "mac": {
+      "category": "public.app-category.business"
+    },
+    "files": [
+      "!Main/*",
+      "!Renderer/*",
+      "!Shared/*",
+      "!app_auth.json",
+      "!user_auth.json",
+      "!TwitterFollowerDB*",
+      "!ITKElectron.sln"
+    ]
+  },
+  "dependencies": {
+    "better-sqlite3": "^7.1.0",
+    "oauth-electron-twitter": "^1.0.92",
+    "twitter-lite": "^0.14.0"
+  }
+}

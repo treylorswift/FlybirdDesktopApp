@@ -1,0 +1,26 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es2018",
+        "lib": [ "es2018", "DOM" ],
+        "sourceMap": true,
+        "outDir": "../tsBuild"
+    },
+    "files": [
+        "Delay.ts",
+        "Main.ts",
+        "MessagingCampaign.ts",
+        "TwitterFollowerDB.ts",
+        "TwitterUser.ts",
+        "../Shared/RPC.ts",
+        "../Shared/ElectronIPC.ts",
+        "../Shared/ServerApi.ts",
+        "../Shared/ClientApi.ts",
+        "../Shared/TwitterAuth.ts",
+        "../Shared/MessageTemplate.ts"
+    ],
+    "exclude": [
+    ]
+}
+
+

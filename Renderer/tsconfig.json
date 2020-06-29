@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "AMD",
+        "target": "es2018",
+        "lib": [ "es2018", "DOM" ],
+        "sourceMap": true,
+        "outFile": "../tsBuild/Main/Renderer.js"
+    },
+    "files": [
+        "Site.ts",
+        "LoginPage.ts",
+        "HomePage.ts",
+        "ProgressComponent.ts",
+        "QueryComponent.ts",
+        "FollowerCacheComponent.ts",
+        "DOMComponent.ts",
+        "DOMSite.ts",
+        "../Shared/RPC.ts",
+        "../Shared/ElectronIPC.ts",
+        "../Shared/ServerApi.ts",
+        "../Shared/ClientApi.ts",
+        "../Shared/TwitterAuth.ts",
+        "../Shared/MessageTemplate.ts"
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "note": "This is in the Shared folder strictly for syntax highlighting in Visual Studio",
+    "compilerOptions": {
+        "target": "es2018",
+        "lib": [ "es2018", "DOM" ]
+    }
+}
+
+
