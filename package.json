@@ -1,6 +1,6 @@
 {
   "name": "Flybird",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Flybird Desktop App",
   "main": "tsBuild/Main/Main.js",
   "scripts": {
