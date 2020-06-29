@@ -379,7 +379,7 @@ export class QueryComponent extends DOMComponent
     {
         return `Hey there, are you interested in receiving my newsletter?
 
-You can sign up at https://itk-signup.herokuapp.com/${this.parent.userLogin.screen_name}?twRef=\${followerTwitterHandle}`;
+You can sign up at https://flybirdy.herokuapp.com/${this.parent.userLogin.screen_name}?twRef=\${followerTwitterHandle}`;
     }
 
     async Render(em:HTMLElement)
